@@ -27,6 +27,12 @@ echo ""
 echo ""
 echo "find-domain is starting"
   findomain-linux -t $dom | tee finddomain.$dom.txt
-echo "Find domain finished its task" 
+echo "Find domain finished its task"
+
+echo ""
 echo "sorting subdomains"
 echo *.txt | sort -u | subdomain.txt
+echo "resolving subdomains"
+  cat subdomain.txt | httpx | tee resolve.subdomains.txt >> /dev/null
+echo "httpx fininshed its task"
+
