@@ -16,4 +16,7 @@ echo ""
 echo "Starting Sublist3r"
   sublist3r -d $dom -o sublist3r.$dom.txt >>/dev/null
 echo "Sublist3r finished its task" 
-echo amass.$dom.txt | sort -u | subdomain.txt
+echo "searching from crt.sh"
+  curl -s https://crt.sh/\?q\=%25.$dom\&output\=json | jq -r ' .[].name_value' | sed 's/\*\.//g' | tee $dom.txt >>/dev/null
+echo "crt.sh finished its task"
+echo *.txt | sort -u | subdomain.txt
