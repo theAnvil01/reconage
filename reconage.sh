@@ -19,4 +19,10 @@ echo "Sublist3r finished its task"
 echo "searching from crt.sh"
   curl -s https://crt.sh/\?q\=%25.$dom\&output\=json | jq -r ' .[].name_value' | sed 's/\*\.//g' | tee $dom.txt >>/dev/null
 echo "crt.sh finished its task"
+echo ""
+echo "starting sub finder " 
+subfinder -d $dom -v -o subfinder.$dom.txt 
+echo "sub finder finished its task"
+
+echo "sorting subdomains"
 echo *.txt | sort -u | subdomain.txt
