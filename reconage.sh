@@ -23,6 +23,10 @@ echo ""
 echo "starting sub finder " 
 subfinder -d $dom -v -o subfinder.$dom.txt 
 echo "sub finder finished its task"
-
+echo ""
+echo ""
+echo "find-domain is starting"
+  findomain-linux -t $dom | tee finddomain.$dom.txt
+echo "Find domain finished its task" 
 echo "sorting subdomains"
 echo *.txt | sort -u | subdomain.txt
