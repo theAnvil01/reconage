@@ -35,4 +35,9 @@ echo *.txt | sort -u | subdomain.txt
 echo "resolving subdomains"
   cat subdomain.txt | httpx | tee resolve.subdomains.txt >> /dev/null
 echo "httpx fininshed its task"
+echo ""
+echo "fetching all urls with gau"
+    resolve.subdomains.txt | gau | tee urls.txt >> /dev/null
+echo " all url fetched with gau"
+
 
