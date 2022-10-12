@@ -45,3 +45,7 @@ echo ""
 echo "sorting urls"
     cat *.txt | egrep -v  "\.woff|\.ttf|\.svg|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico" | sed 's/:80//g;s/:443//g' | sort -u > final.urls.txt
 echo "sorting url done"
+echo ""
+echo "checking cnames"
+      cat subdomains.txt | xargs  -P 50 -I % bash -c "dig % | grep CNAME" > cname.txt
+echo "cname is been checked" 
