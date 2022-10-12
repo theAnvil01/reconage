@@ -41,3 +41,7 @@ echo "fetching all urls with gau"
 echo " all url fetched with gau"
 
 
+echo ""
+echo "sorting urls"
+    cat *.txt | egrep -v  "\.woff|\.ttf|\.svg|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico" | sed 's/:80//g;s/:443//g' | sort -u > final.urls.txt
+echo "sorting url done"
