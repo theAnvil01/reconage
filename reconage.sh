@@ -48,4 +48,5 @@ echo "sorting url done"
 echo ""
 echo "checking cnames"
       cat subdomains.txt | xargs  -P 50 -I % bash -c "dig % | grep CNAME" > cname.txt
+      cat cname.txt | awk '{print $1}' | sed 's/.$//g' | httpx -silent -status-code -cdn -csp-probe -tls-probe 
 echo "cname is been checked" 
