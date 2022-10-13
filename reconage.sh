@@ -53,3 +53,7 @@ echo "cname is been checked"
 echo "scanning for subdomain takeover"
   subzy --targets subdomains.txt --hide_fails 
 echo "subzy finished its task" 
+echo ""
+echo "enumerating js files"
+  cat urls.txt | grep '\.js$' | httpx -status-code -mc 200 -content-type | grep 'application/javascript' | awk '{print $1}' | tee /js.txt >/dev/null 2>&1;
+echo "filtered out js file" 
