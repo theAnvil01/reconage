@@ -65,3 +65,8 @@ echo ""
 echo "scanning for sql injection"
   cat urls.txt | gf sqli | tee sqli.txt
 echo "Scanned urls for sql injection"
+echo ""
+echo "scanning for ssrf"
+  cat urls.txt | gf ssrf | tee ssrf.txt
+echo ""
+echo "Scanning done for ssrf"
