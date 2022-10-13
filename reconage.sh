@@ -78,3 +78,8 @@ echo ""
 echo "scanning for ssti"
   cat urls.txt | gf ssti | tee ssti.txt 
 echo "scanning finished for ssti"
+echo ""
+echo "scanning cve" 
+  nuclei -l subdomains.txt -t /root/nuclei-templates/cves | tee cves.txt
+echo "scanning cve done"
+echo ""
