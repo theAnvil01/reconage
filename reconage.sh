@@ -83,3 +83,6 @@ echo "scanning cve"
   nuclei -l subdomains.txt -t /root/nuclei-templates/cves | tee cves.txt
 echo "scanning cve done"
 echo ""
+echo "scanning for vulnerablities"
+  nuclei -l subdomains.txt -t /root/nuclei-templates/vulnerabilities | tee nuclei_bugs.txt
+echo "scanning for vulnerablities is done "
