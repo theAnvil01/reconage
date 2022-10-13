@@ -74,3 +74,7 @@ echo ""
 echo "Scanning for redirect"
       cat urls.txt | gf redirect | tee redirect.txt 
 echo "scanned for redirect"
+echo ""
+echo "scanning for ssti"
+  cat urls.txt | gf ssti | tee ssti.txt 
+echo "scanning finished for ssti"
