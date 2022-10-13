@@ -61,3 +61,7 @@ echo ""
 echo "scanning lfi"
   cat urls.txt | gf lfi | tee lfi.txt
 echo "lfi scanning is been done"
+echo "" 
+echo "scanning for sql injection"
+  cat urls.txt | gf sqli | tee sqli.txt
+echo "Scanned urls for sql injection"
