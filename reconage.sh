@@ -70,3 +70,7 @@ echo "scanning for ssrf"
   cat urls.txt | gf ssrf | tee ssrf.txt
 echo ""
 echo "Scanning done for ssrf"
+echo ""
+echo "Scanning for redirect"
+      cat urls.txt | gf redirect | tee redirect.txt 
+echo "scanned for redirect"
