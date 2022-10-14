@@ -86,3 +86,8 @@ echo ""
 echo "scanning for vulnerablities"
   nuclei -l subdomains.txt -t /root/nuclei-templates/vulnerabilities | tee nuclei_bugs.txt
 echo "scanning for vulnerablities is done "
+echo ""
+echo "Scanning for misconfiguration"
+  nuclei -l subdomains.txt -t /root/nuclei-templates/misconfiguration | tee nuclei_misconfiguration.txt
+echo "Scanned for misconfiguration"
+echo "done"
